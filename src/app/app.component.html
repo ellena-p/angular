@@ -1,0 +1,20 @@
+<header>
+  <h1>{{ title }}</h1>
+  <h3>{{ welcome }}</h3>
+</header>
+<br />
+
+<app-filter-options
+  (available)="onShowAvailable()"
+  (rented)="onShowRented()"
+  (reset)="onShowReset()"
+>
+</app-filter-options>
+<app-cars-list
+  [showAvailable]="showAvailable"
+  [showUnavailable]="showUnavailable"
+  (carToRent)="onRentTheCar($event)"
+  (carToReturn)="onReturnTheCar($event)"
+  [cars_list]="cars"
+>
+</app-cars-list>
